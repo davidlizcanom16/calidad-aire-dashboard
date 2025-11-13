@@ -1,16 +1,5 @@
-# Dependencias para el Dashboard de Calidad del Aire
-
-# Database
-psycopg2-binary==2.9.9
-
-# Data Processing
-pandas==2.1.4
-numpy==1.26.2
-
-# Visualization
-streamlit==1.29.0
-plotly==5.18.0
-
-# Utilities
-python-dateutil==2.8.2
-pytz==2023.3
+streamlit>=1.28.0
+   pandas>=2.0.0
+   plotly>=5.17.0
+   psycopg2-binary>=2.9.0
+   python-dateutil>=2.8.0

@@ -90,19 +90,16 @@ def load_ml_models():
     models = {}
     
     try:
-        # Intentar cargar modelo 1 (RandomForest)
-        if Path("modelo1_aqi.pkl").exists():
-            models['modelo1'] = joblib.load("modelo1_aqi.pkl")
-            models['modelo1_name'] = "Random Forest"
-        else:
-            models['modelo1'] = None
-            
-        # Intentar cargar modelo 2 (XGBoost)
+        # Solo cargar modelo 2 (XGBoost)
         if Path("modelo2_aqi.pkl").exists():
             models['modelo2'] = joblib.load("modelo2_aqi.pkl")
             models['modelo2_name'] = "XGBoost + IsolationForest"
         else:
             models['modelo2'] = None
+        
+        # Modelo 1 deshabilitado
+        models['modelo1'] = None
+        models['modelo1_name'] = "Random Forest (Deshabilitado)"
             
     except Exception as e:
         st.error(f"Error cargando modelos: {e}")
